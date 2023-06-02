@@ -1,10 +1,22 @@
+ï»¿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace MauiBlazorApp70.Data
 {
-    public class WeatherForecastService
+    public class NorthwindService
     {
+        public NorthwindService()
+        {
+
+        }
+
+
         private static readonly string[] Summaries = new[]
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
         public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
@@ -16,15 +28,5 @@ namespace MauiBlazorApp70.Data
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             }).ToArray());
         }
-
-        void Test()
-        {
-            var x = new WeatherForecastService();
-            x.GetForecastAsync(DateTime.Now);
-
-            // ¹è¿­ ¹®ÀÚ¿­ 3°³
-            var y = new string[3];
-
-        }       
     }
 }
